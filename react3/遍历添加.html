@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/react.16.8.6.js"></script>
+    <script src="js/react-dom.16.8.6.js"></script>
+    <script src="js/prop-types.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+    <div id="demodiv"></div>
+    <script type="text/babel">
+        
+        class XunHuan extends React.Component{
+
+           constructor(props){
+              super(props)
+              this.state={
+                  arrayy:[
+                      {name:"常娜",age:18},
+                      {name:"邹瓜瓜",age:35},
+                      {name:"哈哈",age:12}
+                  ]
+              }
+
+
+
+
+           }
+
+        
+           fun1=(e)=>{
+            console.log(e.target.value);
+          
+            }
+            fun2=(e)=>{
+                console.log(e.target.value);
+              
+            }
+            render(){
+                return(
+
+                    <div>
+                        <ul>
+                     {
+                         this.state.arrayy.map((v,i)=>{
+
+                             return(
+                                 <li key={i}>{v.name}-------{v.age}</li>
+                             )
+                         })
+                     }
+                         </ul> 
+                       <input type="text" onChange={this.fun1}/>
+                       <input type="text" onChange={this.fun2}/>
+                       <button  onClick={this.funaa}>添加</button> 
+                     </div>
+                  
+                )
+            }
+        }
+        
+
+        ReactDOM.render( <XunHuan/>,document.getElementById("demodiv"));
+    </script>
+</body>
+</html>

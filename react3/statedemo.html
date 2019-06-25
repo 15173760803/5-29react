@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/react.16.8.6.js"></script>
+    <script src="js/react-dom.16.8.6.js"></script>
+    <script src="js/prop-types.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+    <div id="demodiv"></div>
+    <script type="text/babel">
+       class MyReact extends React.Component{
+         
+             constructor(props){
+                 super(props)
+                 this.state={
+                     text:"我是state的初始数据"
+                 }
+             }
+             render(){
+               return(
+                   <p>{this.state.text}</p>
+               )
+           }
+       }   
+       ReactDOM.render(<MyReact/>,document.getElementById("demodiv"));
+    </script>
+</body>
+</html>
